@@ -1,0 +1,35 @@
+h1. purrfect_json
+
+An overly complicated extension which allows the formatting of JSON into cats, thereby making the JSON purrfect!
+
+h2. Installation
+From the purrfect_json directory:
+<pre><code>
+  rake build
+  gem install pkg/purrfect_json*.gem
+</code></pre>
+
+h2. Usage
+
+h3. Non-Rails
+You need only to include the <code>PurrfectJson</code> module into a class.  Please note that the class must implement a <code>to_json</code> method.
+
+<pre><code>class Catnip
+  include PurrfectJson
+
+  def to_json
+    # some code here
+  end
+end</code></pre>
+
+h3. Rails
+In your environment.rb:
+<pre><code>
+  config.gem 'purrfect_json'
+</code></pre>
+
+If the gem is loaded with Rails present, it will automatically register the MIME type <code>text/cats</code> for the <em>.cats</em> format.  It will also automatically include itself into <code>ActiveRecord::Base</code>, so you should be able to start getting purrfect JSON from your models automatically.
+
+h2. Credits
+
+Kudos to Joey Schoblaska for the idea and original implementation, and David Nawara for the name.
