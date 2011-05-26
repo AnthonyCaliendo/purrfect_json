@@ -3,6 +3,7 @@ h1. purrfect_json
 An overly complicated extension which allows the formatting of JSON into cats, thereby making the JSON purrfect!
 
 h2. Installation
+
 From the purrfect_json directory:
 <pre><code>
   rake build
@@ -12,6 +13,7 @@ From the purrfect_json directory:
 h2. Usage
 
 h3. Non-Rails
+
 You need only to include the <code>PurrfectJson</code> module into a class.  Please note that the class must implement a <code>to_json</code> method.
 
 <pre><code>class Catnip
@@ -23,12 +25,1834 @@ You need only to include the <code>PurrfectJson</code> module into a class.  Ple
 end</code></pre>
 
 h3. Rails
+
 In your environment.rb:
 <pre><code>
   config.gem 'purrfect_json'
 </code></pre>
 
 If the gem is loaded with Rails present, it will automatically register the MIME type <code>text/cats</code> for the <em>.cats</em> format.  It will also automatically include itself into <code>ActiveRecord::Base</code>, so you should be able to start getting purrfect JSON from your models automatically.
+
+h2. Example Output
+
+Formatted output from:
+http://api.uat.groupon.com/v2/divisions.cats
+
+<pre>
+
+                                                {"divisi
+                              ons":[{"id":"abbotsford","name
+                           ":"Abbotsford","country":"Canada","
+                         timezone":"PacificTime(US&Canada)","tim
+                        ezoneOffsetInSeconds":-2880    0,"lat":49
+                       .0568,"lng":-122.285,"isNow        MerchantE
+                     nabled":false,"isNowCustomerE           nabled"
+                     :false,"areas":[]},{"id":"ab             ilene",
+               "name":"Abilene,TX","country":"US                A","t
+             imezone":"CentralTime(US&Canada)","
+          timezoneOffsetInSeconds":-21600,"lat"
+        :32.4487,"lng":-99.7331,"isNowMerchantEn
+         abled":false,"isNowCustomer  Enabled":f
+           alse,"areas":[]},{"id":"      akron-c
+            anton","name":"Akron/C        anton
+             ","country":"USA","t        imezo
+              ne":"E  asternTime(        US&C
+                     anada)","tim       ezon
+                       eOffsetInS       eco
+                        nds":-180     00,"
+                        lat":41.0    814,
+                        "lng":-81
+                        .519,"is
+                        NowMerch
+                        antEnabl
+                        ed":fal
+                        se,"isN
+                        owCusto
+                        me rEna
+      
+                                                bled":fa
+                              lse,"areas":[]},{"id":"albany-
+                           capital-region","name":"Albany/Capi
+                         talRegion","country":"USA","timezone":"
+                        EasternTime(US&Canada)","ti    mezoneOffs
+                       etInSeconds":-18000,"lat":4        2.6526,"l
+                     ng":-73.7562,"isNowMerchantEn           abled":
+                     false,"isNowCustomerEnabled"             :false,
+               "areas":[]},{"id":"albuquerque","                name"
+             :"Albuquerque","country":"USA","tim
+          ezone":"MountainTime(US&Canada)","tim
+        ezoneOffsetInSeconds":-25200,"lat":35.08
+         45,"lng":-106.651,"isNowMer  chantEnabl
+           ed":false,"isNowCustomer      Enabled
+            ":false,"areas":[]},{"        id":"
+             allentown-reading","        name"
+              :"Alle  ntown/Readi        ng",
+                     "country":"U       SA",
+                       "timezone"       :"C
+                        entralTim     e(US
+                        &Canada)"    ,"ti
+                        mezoneOff
+                        setInSec
+                        onds":-2
+                        1600,"la
+                        t":40.6
+                        084,"ln
+                        g":-75.
+                        49 02,"
+      
+                                                 isNo
+                                                 wMerc
+                                                   hant
+                                                    Enab
+                                                    led":
+                                                    false,
+                                                    "isNow
+                                                    Custom
+    erEn  abl                                       ed":fa
+   lse,"areas":[]},{"i                              d":"am
+   arillo","name":"Amarillo","         country":"USA","tim
+   ezone":"CentralTime(US&Canada)","timezoneOffsetInSecond
+   s":-21600,"lat":35.222,"lng":-101.831,"isNowMerchantEnab
+   led":false,"isNowCustomerEnabled":false,"areas":[]},{"id"
+  :"anchorage","name":"Anchorage","country":"USA","timezone":
+  "Alaska","timezoneOffsetInSeconds":-32400,"lat":61.2181,"lng
+    ":-1         49.9,"isNowMerchantEnabled":false,"isNowCustom
+                   erEnabled":false,"areas":[]},{"id":"ann-arbor",
+                  "name":"AnnArbor","country":"USA","timezone":"Easte
+               rnTime(US&Canada)","timezoneOffsetInSeconds":-18000,"lat
+              ":42.2814,"lng":-83.7483,"isNowMerchantEnabled":false,"isN
+             owCusto    merEna                    bled"   :false,"areas
+            ":[]}      ,{"id"                    :"apple           ton",
+            "nam     e":"App              leton","coun            try":"
+                    USA","t               imezone"               :"Centr
+                    alTime                                     (US&Can
+      
+                                                 ada)
+                                                 ","ti
+                                                   mezo
+                                                    neOf
+                                                    fsetI
+                                                    nSecon
+                                                    ds":-2
+                                                    1600,"
+    lat"  :44                                       .2619,
+   "lng":-88.4154,"isN                              owMerc
+   hantEnabled":false,"isNowCu         stomerEnabled":fals
+   e,"areas":[]},{"id":"asheville","name":"Asheville","cou
+   ntry":"USA","timezone":"EasternTime(US&Canada)","timezon
+   eOffsetInSeconds":-18000,"lat":35.6009,"lng":-82.554,"isN
+  owMerchantEnabled":false,"isNowCustomerEnabled":false,"area
+  s":[]},{"id":"athens-ga","name":"Athens,GA","country":"USA",
+    "tim         ezone":"EasternTime(US&Canada)","timezoneOffse
+                   tInSeconds":-18000,"lat":33.9558,"lng":-83.3824
+                  ,"isNowMerchantEnabled":false,"isNowCustomerEnabled
+               ":false,"areas":[]},{"id":"atlanta","name":"Atlanta","co
+              untry":"USA","timezone":"EasternTime(US&Canada)","timezone
+             OffsetI    nSecon                    ds":-   18000,"lat":3
+            3.754      5,"lng                    ":-84.3           897,"
+            isNo     wMercha              ntEnabled":f            alse,"
+                    isNowCu               stomerEn               abled":
+                    false,                                     "areas"
+      
+                                                 :[]}
+                                                 ,{"id
+                                                   ":"a
+                                                    ugus
+                                                    ta","
+                                                    name":
+                                                    "Augus
+                                                    ta","c
+    ount  ry"                                       :"USA"
+   ,"timezone":"Easter                              nTime(
+   US&Canada)","timezoneOffset         InSeconds":-18000,"
+   lat":33.4742,"lng":-82.0097,"isNowMerchantEnabled":fals
+   e,"isNowCustomerEnabled":false,"areas":[]},{"id":"austin
+   ","name":"Austin","country":"USA","timezone":"CentralTime
+  (US&Canada)","timezoneOffsetInSeconds":-21600,"lat":30.2687
+  ,"lng":-97.7452,"isNowMerchantEnabled":false,"isNowCustomerE
+    nabl         ed":false,"areas":[]},{"id":"bakersfield","nam
+                   e":"Bakersfield","country":"USA","timezone":"Pa
+                  cificTime(US&Canada)","timezoneOffsetInSeconds":-28
+               800,"lat":35.3733,"lng":-119.019,"isNowMerchantEnabled":
+              false,"isNowCustomerEnabled":false,"areas":[]},{"id":"balt
+             imore",    "name"                    :"Bal   timore","coun
+            try":      "USA",                    "timezo           ne":"
+            East     ernTime              (US&Canada)"            ,"time
+                    zoneOff               setInSec               onds":-
+                    18000,                                     "lat":3
+      
+                                                               9.29
+                                                              43,"ln
+                                                              g":-76
+                                                              .6143,
+                                                             "isNow
+                                                            Mercha
+                                                           ntEnab
+                                                         led":fa
+                                 lse,"isNo              wCustom
+                             erEn abled":fals          e,"area
+                  s"       :[]},{"id":"barrie",       "name":
+               "Barrie",  "country":"Canada","ti     mezone"
+          :"EasternTime(US&Canada)","timezoneOffse  tInSeco
+            nds":-18000,"lat":44.3812,"lng":-79.687,"isNow
+             MerchantEnabled":false,"isNowCustomerEnabled
+             ":false,"areas":[]},{"id":"baton-rouge","na
+             me":"BatonRouge","country":"USA","timezone"
+              :"CentralTime(US&Canada)","timezoneOffsetI
+                nSeconds":-21600,"lat":30.4507,"lng":-91
+                    .1545,"isNowMerchantEnabled":false,"
+                     isNowCustomerEn    abled":false,"a
+                      reas":[]},{"i       d":"billings"
+                      ,"name":"Bil         lings","cou
+                      ntry":"USA",         "timezone"
+                      :"MountainTi         me(US&Cana
+                      da)","timezo          neOffsetI
+                      nSeco  nds":          -25200,"l
+                      at":4  5.783           3,"lng"
+                      :-10   8.501           ,"isNow
+                     Merc    hantE           nabled"
+                     :fal    se,"            isNowC
+                    usto    merEn           abled"
+                    :f     alse,           "areas
+                            ":[           ]},{"id
+                                            ":"
+      
+                                                               birm
+                                                              ingham
+                                                              ","nam
+                                                              e":"Bi
+                                                             rmingh
+                                                            am","c
+                                                           ountry
+                                                         ":"USA"
+                                 ,"timezon              e":"Cen
+                             tral Time(US&Can          ada)","
+                  ti       mezoneOffsetInSecond       s":-216
+               00,"lat":  33.5207,"lng":-86.8025     ,"isNow
+          MerchantEnabled":false,"isNowCustomerEna  bled":f
+            alse,"areas":[]},{"id":"boise","name":"Boise",
+             "country":"USA","timezone":"MountainTime(US&
+             Canada)","timezoneOffsetInSeconds":-25200,"
+             lat":43.6137,"lng":-116.238,"isNowMerchantE
+              nabled":false,"isNowCustomerEnabled":true,
+                "areas":[]},{"id":"boston","name":"Bosto
+                    n","country":"USA","timezone":"Easte
+                     rnTime(US&Canad    a)","timezoneOf
+                      fsetInSeconds       ":-18000,"lat
+                      ":42.3589,"l         ng":-71.057
+                      8,"isNowMerc         hantEnable
+                      d":false,"is         NowCustome
+                      rEnabled":fa          lse,"area
+                      s":[]  },{"i          d":"buffa
+                      lo","  name"           :"Buffa
+                      lo",   "coun           try":"U
+                     SA",    "time           zone":"
+                     East    ernT            ime(US
+                    &Can    ada)"           ,"time
+                    zo     neOff           setInS
+                            eco           nds":-1
+                                            800
+      
+                                                0,"lat":
+                              42.8864,"lng":-78.8784,"isNowM
+                           erchantEnabled":false,"isNowCustome
+                         rEnabled":false,"areas":[]},{"id":"calg
+                        ary","name":"Calgary","coun    try":"Cana
+                       da","timezone":"MountainTim        e(US&Cana
+                     da)","timezoneOffsetInSeconds           ":-2520
+                     0,"lat":51.045,"lng":-114.05             7,"isNo
+               wMerchantEnabled":false,"isNowCus                tomer
+             Enabled":false,"areas":[]},{"id":"c
+          edar-rapids-iowa-city","name":"CedarR
+        apids/IowaCity","country":"USA","timezon
+         e":"CentralTime(US&Canada)"  ,"timezone
+           OffsetInSeconds":-21600,      "lat":4
+            1.9625,"lng":-91.6918,        "isNo
+             wMerchantEnabled":fa        lse,"
+              isNowC  ustomerEnab        led"
+                     :false,"area       s":[
+                       ]},{"id":"       cen
+                        tral-jers     ey",
+                        "name":"C    entr
+                        alJersey"
+                        ,"countr
+                        y":"USA"
+                        ,"timezo
+                        ne":"Ea
+                        sternTi
+                        me(US&C
+                        an ada)
+      
+                                                               ","t
+                                                              imezon
+                                                              eOffse
+                                                              tInSec
+                                                             onds":
+                                                            -18000
+                                                           ,"lat"
+                                                         :40.217
+                                 1,"lng":-              74.7429
+                             ,"is NowMerchant          Enabled
+                  ":       false,"isNowCustomer       Enabled
+               ":false,"  areas":[]},{"id":"char     leston"
+          ,"name":"Charleston","country":"USA","ti  mezone"
+            :"EasternTime(US&Canada)","timezoneOffsetInSec
+             onds":-18000,"lat":32.7766,"lng":-79.9309,"i
+             sNowMerchantEnabled":false,"isNowCustomerEn
+             abled":false,"areas":[]},{"id":"charlotte",
+              "name":"Charlotte","country":"USA","timezo
+                ne":"EasternTime(US&Canada)","timezoneOf
+                    fsetInSeconds":-18000,"lat":35.2314,
+                     "lng":-80.8458,    "isNowMerchantE
+                      nabled":false       ,"isNowCustom
+                      erEnabled":f         alse,"areas
+                      ":[]},{"id":         "chattanoo
+                      ga","name":"         Chattanoog
+                      a","country"          :"USA","t
+                      imezo  ne":"          EasternTi
+                      me(US  &Cana           da)","t
+                      imez   oneOf           fsetInS
+                     econ    ds":-           18000,"
+                     lat"    :35.            0456,"
+                    lng"    :-85.           3097,"
+                    is     NowMe           rchant
+                            Ena           bled":f
+                                            als
+      
+                                                               e,"i
+                                                              sNowCu
+                                                              stomer
+                                                              Enable
+                                                             d":fal
+                                                            se,"ar
+                                                           eas":[
+                                                         ]},{"id
+                                 ":"chicag              o","nam
+                             e":" Chicago","c          ountry"
+                  :"       USA","timezone":"Cen       tralTim
+               e(US&Cana  da)","timezoneOffsetIn     Seconds
+          ":-21600,"lat":41.8795,"lng":-87.6243,"i  sNowMer
+            chantEnabled":true,"isNowCustomerEnabled":true
+             ,"areas":[]},{"id":"cincinnati","name":"Cinc
+             innati","country":"USA","timezone":"Eastern
+             Time(US&Canada)","timezoneOffsetInSeconds":
+              -18000,"lat":39.148,"lng":-84.477,"isNowMe
+                rchantEnabled":false,"isNowCustomerEnabl
+                    ed":false,"areas":[]},{"id":"clevela
+                     nd","name":"Cle    veland","countr
+                      y":"USA","tim       ezone":"Easte
+                      rnTime(US&Ca         nada)","tim
+                      ezoneOffsetI         nSeconds":
+                      -18000,"lat"         :41.4995,"
+                      lng":-81.695          4,"isNowM
+                      ercha  ntEna          bled":fal
+                      se,"i  sNowC           ustomer
+                      Enab   led":           false,"
+                     area    s":[]           },{"id"
+                     :"co    lora            do-spr
+                    ings    ","na           me":"C
+                    ol     orado           Spring
+                            s",           "countr
+                                            y":
+      
+                                                "USA","t
+                              imezone":"MountainTime(US&Cana
+                           da)","timezoneOffsetInSeconds":-252
+                         00,"lat":38.8339,"lng":-104.821,"isNowM
+                        erchantEnabled":false,"isNo    wCustomerE
+                       nabled":false,"areas":[]},{        "id":"col
+                     umbia","name":"Columbia","cou           ntry":"
+                     USA","timezone":"EasternTime             (US&Can
+               ada)","timezoneOffsetInSeconds":-                18000
+             ,"lat":34.0007,"lng":-81.0348,"isNo
+          wMerchantEnabled":false,"isNowCustome
+        rEnabled":false,"areas":[]},{"id":"colum
+         bia-mo","name":"Columbia,MO  ","country
+           ":"USA","timezone":"Cent      ralTime
+            (US&Canada)","timezone        Offse
+             tInSeconds":-21600,"        lat":
+              38.948  1,"lng":-92        .326
+                     8,"isNowMerc       hant
+                       Enabled":f       als
+                        e,"isNowC     usto
+                        merEnable    d":f
+                        alse,"are
+                        as":[]},
+                        {"id":"c
+                        olumbus"
+                        ,"name"
+                        :"Colum
+                        bus","c
+                        ou ntry
+      
+                                                ":"USA",
+                              "timezone":"EasternTime(US&Can
+                           ada)","timezoneOffsetInSeconds":-18
+                         000,"lat":39.9612,"lng":-82.9988,"isNow
+                        MerchantEnabled":false,"isN    owCustomer
+                       Enabled":false,"areas":[]},        {"id":"co
+                     lumbus-ga","name":"ColumbusGA           ","coun
+                     try":"USA","timezone":"Easte             rnTime(
+               US&Canada)","timezoneOffsetInSeco                nds":
+             -18000,"lat":32.461,"lng":-84.9877,
+          "isNowMerchantEnabled":false,"isNowCu
+        stomerEnabled":false,"areas":[]},{"id":"
+         corpus-christi","name":"Cor  pusChristi
+           ","country":"USA","timez      one":"C
+            entralTime(US&Canada)"        ,"tim
+             ezoneOffsetInSeconds        ":-21
+              600,"l  at":27.8006        ,"ln
+                     g":-97.3964,       "isN
+                       owMerchant       Ena
+                        bled":fal     se,"
+                        isNowCust    omer
+                        Enabled":
+                        false,"a
+                        reas":[]
+                        },{"id":
+                        "dallas
+                        ","name
+                        ":"Dall
+                        as ","c
+      
+                                                ountry":
+                              "USA","timezone":"CentralTime(
+                           US&Canada)","timezoneOffsetInSecond
+                         s":-21600,"lat":32.7811,"lng":-96.7971,
+                        "isNowMerchantEnabled":fals    e,"isNowCu
+                       stomerEnabled":false,"areas        ":[]},{"i
+                     d":"dayton","name":"Dayton","           country
+                     ":"USA","timezone":"EasternT             ime(US&
+               Canada)","timezoneOffsetInSeconds                ":-18
+             000,"lat":39.7589,"lng":-84.1916,"i
+          sNowMerchantEnabled":false,"isNowCust
+        omerEnabled":false,"areas":[]},{"id":"da
+         ytona-beach","name":"Dayton  aBeach","c
+           ountry":"USA","timezone"      :"Easte
+            rnTime(US&Canada)","ti        mezon
+             eOffsetInSeconds":-1        8000,
+              "lat":  29.1988,"ln        g":-
+                     81.089,"isNo       wMer
+                       chantEnabl       ed"
+                        :false,"i     sNow
+                        CustomerE    nabl
+                        ed":false
+                        ,"areas"
+                        :[]},{"i
+                        d":"denv
+                        er","na
+                        me":"De
+                        nver","
+                        co untr
+      
+                                                y":"USA"
+                              ,"timezone":"MountainTime(US&C
+                           anada)","timezoneOffsetInSeconds":-
+                         25200,"lat":39.7551,"lng":-104.988,"isN
+                        owMerchantEnabled":false,"i    sNowCustom
+                       erEnabled":false,"areas":[]        },{"id":"
+                     des-moines","name":"DesMoines           ","coun
+                     try":"USA","timezone":"Centr             alTime(
+               US&Canada)","timezoneOffsetInSeco                nds":
+             -21600,"lat":41.6005,"lng":-93.6091
+          ,"isNowMerchantEnabled":false,"isNowC
+        ustomerEnabled":false,"areas":[]},{"id":
+         "detroit","name":"Detroit",  "country":
+           "USA","timezone":"Easter      nTime(U
+            S&Canada)","timezoneOf        fsetI
+             nSeconds":-18000,"la        t":42
+              .3314,  "lng":-83.0        458,
+                     "isNowMercha       ntEn
+                       abled":fal       se,
+                        "isNowCus     tome
+                        rEnabled"    :fal
+                        se,"areas
+                        ":[]},{"
+                        id":"div
+                        ision-11
+                        3053098
+                        47","na
+                        me":"Di
+                        vi sion
+      
+                                                               -113
+                                                              053098
+                                                              47","c
+                                                              ountry
+                                                             ":"USA
+                                                            ","tim
+                                                           ezone"
+                                                         :"Centr
+                                 alTime(US              &Canada
+                             )"," timezoneOff          setInSe
+                  co       nds":-21600,"lat":41       .8795,"
+               lng":-87.  6243,"isNowMerchantEna     bled":f
+          alse,"isNowCustomerEnabled":false,"areas  ":[]},{
+            "id":"division-11305561075","name":"Division-1
+             1305561075","country":"USA","timezone":"Cent
+             ralTime(US&Canada)","timezoneOffsetInSecond
+             s":-21600,"lat":41.8795,"lng":-87.6243,"isN
+              owMerchantEnabled":false,"isNowCustomerEna
+                bled":false,"areas":[]},{"id":"division-
+                    11305666243","name":"Division-113056
+                     66243","country    ":"USA","timezo
+                      ne":"CentralT       ime(US&Canada
+                      )","timezone         OffsetInSec
+                      onds":-21600         ,"lat":41.
+                      8795,"lng":-         87.6243,"i
+                      sNowMerchant          Enabled":
+                      false  ,"isN          owCustome
+                      rEnab  led":           false,"
+                      area   s":[]           },{"id"
+                     :"di    visio           n-21305
+                     3244    78",            "name"
+                    :"Di    visio           n-2130
+                    53     24478           ","cou
+                            ntr           y":"USA
+                                            ","
+      
+                                                 time
+                                                 zone"
+                                                   :"Ce
+                                                    ntra
+                                                    lTime
+                                                    (US&Ca
+                                                    nada)"
+                                                    ,"time
+    zone  Off                                       setInS
+   econds":-21600,"lat                              ":41.8
+   795,"lng":-87.6243,"isNowMe         rchantEnabled":fals
+   e,"isNowCustomerEnabled":false,"areas":[]},{"id":"divis
+   ion-21306334576","name":"Division-21306334576","country"
+   :"USA","timezone":"CentralTime(US&Canada)","timezoneOffse
+  tInSeconds":-21600,"lat":41.8795,"lng":-87.6243,"isNowMerch
+  antEnabled":false,"isNowCustomerEnabled":false,"areas":[]},{
+    "id"         :"division-31305324674","name":"Division-31305
+                   324674","country":"USA","timezone":"CentralTime
+                  (US&Canada)","timezoneOffsetInSeconds":-21600,"lat"
+               :41.8795,"lng":-87.6243,"isNowMerchantEnabled":false,"is
+              NowCustomerEnabled":false,"areas":[]},{"id":"division-4130
+             5324720    ","nam                    e":"D   ivision-41305
+            32472      0","co                    untry":           "USA"
+            ,"ti     mezone"              :"CentralTim            e(US&C
+                    anada)"               ,"timezo               neOffse
+                    tInSec                                     onds":-
+      
+                                                 2160
+                                                 0,"la
+                                                   t":4
+                                                    1.87
+                                                    95,"l
+                                                    ng":-8
+                                                    7.6243
+                                                    ,"isNo
+    wMer  cha                                       ntEnab
+   led":false,"isNowCu                              stomer
+   Enabled":false,"areas":[]},         {"id":"division-513
+   05324724","name":"Division-51305324724","country":"USA"
+   ,"timezone":"CentralTime(US&Canada)","timezoneOffsetInSe
+   conds":-21600,"lat":41.8795,"lng":-87.6243,"isNowMerchant
+  Enabled":false,"isNowCustomerEnabled":false,"areas":[]},{"i
+  d":"division-61305324727","name":"Division-61305324727","cou
+    ntry         ":"USA","timezone":"CentralTime(US&Canada)","t
+                   imezoneOffsetInSeconds":-21600,"lat":41.8795,"l
+                  ng":-87.6243,"isNowMerchantEnabled":false,"isNowCus
+               tomerEnabled":false,"areas":[]},{"id":"division-71305324
+              731","name":"Division-71305324731","country":"USA","timezo
+             ne":"Ce    ntralT                    ime(U   S&Canada)","t
+            imezo      neOffs                    etInSec           onds"
+            :-21     600,"la              t":41.8795,"            lng":-
+                    87.6243               ,"isNowM               erchant
+                    Enable                                     d":true
+      
+                                                 ,"is
+                                                 NowCu
+                                                   stom
+                                                    erEn
+                                                    abled
+                                                    ":true
+                                                    ,"area
+                                                    s":[]}
+    ,{"i  d":                                       "divis
+   ion-81305560876","n                              ame":"
+   Division-81305560876","coun         try":"USA","timezon
+   e":"CentralTime(US&Canada)","timezoneOffsetInSeconds":-
+   21600,"lat":41.8795,"lng":-87.6243,"isNowMerchantEnabled
+   ":false,"isNowCustomerEnabled":false,"areas":[]},{"id":"e
+  dmonton","name":"Edmonton","country":"Canada","timezone":"M
+  ountainTime(US&Canada)","timezoneOffsetInSeconds":-25200,"la
+    t":5         3.5436,"lng":-113.49,"isNowMerchantEnabled":fa
+                   lse,"isNowCustomerEnabled":false,"areas":[]},{"
+                  id":"el-paso","name":"ElPaso","country":"USA","time
+               zone":"MountainTime(US&Canada)","timezoneOffsetInSeconds
+              ":-25200,"lat":31.7587,"lng":-106.487,"isNowMerchantEnable
+             d":fals    e,"isN                    owCus   tomerEnabled"
+            :fals      e,"are                    as":[]}           ,{"id
+            ":"e     rie","n              ame":"Erie",            "count
+                    ry":"US               A","time               zone":"
+                    Easter                                     nTime(U
+      
+                                                               S&Ca
+                                                              nada)"
+                                                              ,"time
+                                                              zoneOf
+                                                             fsetIn
+                                                            Second
+                                                           s":-18
+                                                         000,"la
+                                 t":42.129              2,"lng"
+                             :-80 .0851,"isNo          wMercha
+                  nt       Enabled":false,"isNo       wCustom
+               erEnabled  ":true,"areas":[]},{"i     d":"eug
+          ene","name":"Eugene","country":"USA","ti  mezone"
+            :"PacificTime(US&Canada)","timezoneOffsetInSec
+             onds":-28800,"lat":44.0521,"lng":-123.087,"i
+             sNowMerchantEnabled":false,"isNowCustomerEn
+             abled":false,"areas":[]},{"id":"evansville"
+              ,"name":"Evansville","country":"USA","time
+                zone":"CentralTime(US&Canada)","timezone
+                    OffsetInSeconds":-21600,"lat":37.974
+                     8,"lng":-87.555    8,"isNowMerchan
+                      tEnabled":fal       se,"isNowCust
+                      omerEnabled"         :false,"are
+                      as":[]},{"id         ":"fairfie
+                      ld-county","         name":"Fai
+                      rfieldCounty          ","countr
+                      y":"U  SA","          timezone"
+                      :"Eas  ternT           ime(US&
+                      Cana   da)",           "timezo
+                     neOf    fsetI           nSecond
+                     s":-    1800            0,"lat
+                    ":41    .3802           ,"lng"
+                    :-     73.45           53,"is
+                            Now           Merchan
+                                            tEn
+      
+                                                               able
+                                                              d":fal
+                                                              se,"is
+                                                              NowCus
+                                                             tomerE
+                                                            nabled
+                                                           ":fals
+                                                         e,"area
+                                 s":[]},{"              id":"fa
+                             yett eville","na          me":"Fa
+                  ye       tteville","country":       "USA","
+               timezone"  :"EasternTime(US&Canad     a)","ti
+          mezoneOffsetInSeconds":-18000,"lat":35.0  527,"ln
+            g":-78.8784,"isNowMerchantEnabled":false,"isNo
+             wCustomerEnabled":false,"areas":[]},{"id":"f
+             ort-lauderdale","name":"FortLauderdale","co
+             untry":"USA","timezone":"EasternTime(US&Can
+              ada)","timezoneOffsetInSeconds":-18000,"la
+                t":26.1223,"lng":-80.1434,"isNowMerchant
+                    Enabled":false,"isNowCustomerEnabled
+                     ":false,"areas"    :[]},{"id":"for
+                      t-myers-cape-       coral","name"
+                      :"FortMyers/         CapeCoral",
+                      "country":"U         SA","timez
+                      one":"Easter         nTime(US&C
+                      anada)","tim          ezoneOffs
+                      etInS  econd          s":-18000
+                      ,"lat  ":26.           6406,"l
+                      ng":   -81.8           723,"is
+                     NowM    ercha           ntEnabl
+                     ed":    fals            e,"isN
+                    owCu    stome           rEnabl
+                    ed     ":fal           se,"ar
+                            eas           ":[]},{
+                                            "id
+      
+                                                ":"fort-
+                              wayne","name":"FortWayne","cou
+                           ntry":"USA","timezone":"EasternTime
+                         (US&Canada)","timezoneOffsetInSeconds":
+                        -18000,"lat":41.1306,"lng":    -85.1289,"
+                       isNowMerchantEnabled":false        ,"isNowCu
+                     stomerEnabled":false,"areas":           []},{"i
+                     d":"fort-worth","name":"Fort             Worth",
+               "country":"USA","timezone":"Centr                alTim
+             e(US&Canada)","timezoneOffsetInSeco
+          nds":-21600,"lat":32.7254,"lng":-97.3
+        208,"isNowMerchantEnabled":false,"isNowC
+         ustomerEnabled":false,"area  s":[]},{"i
+           d":"fresno","name":"Fres      no","co
+            untry":"USA","timezone        ":"Pa
+             cificTime(US&Canada)        ","ti
+              mezone  OffsetInSec        onds
+                     ":-28800,"la       t":3
+                       6.7477,"ln       g":
+                        -119.772,     "isN
+                        owMerchan    tEna
+                        bled":fal
+                        se,"isNo
+                        wCustome
+                        rEnabled
+                        ":false
+                        ,"areas
+                        ":[]},{
+                        "i d":"
+      
+                                                               gain
+                                                              esvill
+                                                              e","na
+                                                              me":"G
+                                                             ainesv
+                                                            ille",
+                                                           "count
+                                                         ry":"US
+                                 A","timez              one":"E
+                             aste rnTime(US&C          anada)"
+                  ,"       timezoneOffsetInSeco       nds":-1
+               8000,"lat  ":29.6516,"lng":-82.32     48,"isN
+          owMerchantEnabled":false,"isNowCustomerE  nabled"
+            :false,"areas":[]},{"id":"grand-rapids","name"
+             :"GrandRapids","country":"USA","timezone":"E
+             asternTime(US&Canada)","timezoneOffsetInSec
+             onds":-18000,"lat":42.9634,"lng":-85.6681,"
+              isNowMerchantEnabled":false,"isNowCustomer
+                Enabled":false,"areas":[]},{"id":"green-
+                    bay","name":"GreenBay","country":"US
+                     A","timezone":"    CentralTime(US&
+                      Canada)","tim       ezoneOffsetIn
+                      Seconds":-21         600,"lat":4
+                      4.5192,"lng"         :-88.0198,
+                      "isNowMercha         ntEnabled"
+                      :false,"isNo          wCustomer
+                      Enabl  ed":f          alse,"are
+                      as":[  ]},{"           id":"gr
+                      eenv   ille"           ,"name"
+                     :"Gr    eenvi           lle","c
+                     ount    ry":            "USA",
+                    "tim    ezone           ":"Eas
+                    te     rnTim           e(US&C
+                            ana           da)","t
+                                            ime
+      
+                                                 zone
+                                                 Offse
+                                                   tInS
+                                                    econ
+                                                    ds":-
+                                                    18000,
+                                                    "lat":
+                                                    34.852
+    6,"l  ng"                                       :-82.3
+   94,"isNowMerchantEn                              abled"
+   :false,"isNowCustomerEnable         d":false,"areas":[]
+   },{"id":"halifax","name":"Halifax","country":"Canada","
+   timezone":"AtlanticTime(Canada)","timezoneOffsetInSecond
+   s":-14400,"lat":44.6489,"lng":-63.5753,"isNowMerchantEnab
+  led":false,"isNowCustomerEnabled":false,"areas":[]},{"id":"
+  hampton-roads","name":"HamptonRoads","country":"USA","timezo
+    ne":         "EasternTime(US&Canada)","timezoneOffsetInSeco
+                   nds":-18000,"lat":36.8529,"lng":-75.978,"isNowM
+                  erchantEnabled":false,"isNowCustomerEnabled":false,
+               "areas":[]},{"id":"harrisburg","name":"Harrisburg","coun
+              try":"USA","timezone":"EasternTime(US&Canada)","timezoneOf
+             fsetInS    econds                    ":-18   000,"lat":40.
+            2737,      "lng":                    -76.884           4,"is
+            NowM     erchant              Enabled":fal            se,"is
+                    NowCust               omerEnab               led":fa
+                    lse,"a                                     reas":[
+      
+                                                ]},{"id"
+                              :"hartford","name":"Hartford",
+                           "country":"USA","timezone":"Eastern
+                         Time(US&Canada)","timezoneOffsetInSecon
+                        ds":-18000,"lat":41.7637,"l    ng":-72.68
+                       51,"isNowMerchantEnabled":f        alse,"isN
+                     owCustomerEnabled":false,"are           as":[]}
+                     ,{"id":"honolulu","name":"Ho             nolulu"
+               ,"country":"USA","timezone":"Hawa                ii","
+             timezoneOffsetInSeconds":-36000,"la
+          t":21.3069,"lng":-157.858,"isNowMerch
+        antEnabled":false,"isNowCustomerEnabled"
+         :false,"areas":[]},{"id":"h  ouston","n
+           ame":"Houston","country"      :"USA",
+            "timezone":"CentralTim        e(US&
+             Canada)","timezoneOf        fsetI
+              nSecon  ds":-21600,        "lat
+                     ":29.76,"lng       ":-9
+                       5.3625,"is       Now
+                        MerchantE     nabl
+                        ed":false    ,"is
+                        NowCustom
+                        erEnable
+                        d":false
+                        ,"areas"
+                        :[]},{"
+                        id":"hu
+                        ntsvill
+                        e" ,"na
+      
+                                                me":"Hun
+                              tsville","country":"USA","time
+                           zone":"CentralTime(US&Canada)","tim
+                         ezoneOffsetInSeconds":-21600,"lat":34.7
+                        304,"lng":-86.5861,"isNowMe    rchantEnab
+                       led":false,"isNowCustomerEn        abled":fa
+                     lse,"areas":[]},{"id":"indian           apolis"
+                     ,"name":"Indianapolis","coun             try":"U
+               SA","timezone":"EasternTime(US&Ca                nada)
+             ","timezoneOffsetInSeconds":-18000,
+          "lat":39.767,"lng":-86.1563,"isNowMer
+        chantEnabled":false,"isNowCustomerEnable
+         d":false,"areas":[]},{"id":  "inland-em
+           pire","name":"InlandEmpi      re","co
+            untry":"USA","timezone        ":"Pa
+             cificTime(US&Canada)        ","ti
+              mezone  OffsetInSec        onds
+                     ":-28800,"la       t":3
+                       4.1083,"ln       g":
+                        -117.29,"     isNo
+                        wMerchant    Enab
+                        led":fals
+                        e,"isNow
+                        Customer
+                        Enabled"
+                        :false,
+                        "areas"
+                        :[]},{"
+                        id ":"j
+      
+                                                               acks
+                                                              on","n
+                                                              ame":"
+                                                              Jackso
+                                                             n","co
+                                                            untry"
+                                                           :"USA"
+                                                         ,"timez
+                                 one":"Cen              tralTim
+                             e(US &Canada)","          timezon
+                  eO       ffsetInSeconds":-216       00,"lat
+               ":32.2988  ,"lng":-90.1848,"isNow     Merchan
+          tEnabled":false,"isNowCustomerEnabled":f  alse,"a
+            reas":[]},{"id":"jacksonville","name":"Jackson
+             ville","country":"USA","timezone":"EasternTi
+             me(US&Canada)","timezoneOffsetInSeconds":-1
+             8000,"lat":30.3322,"lng":-81.6556,"isNowMer
+              chantEnabled":false,"isNowCustomerEnabled"
+                :false,"areas":[]},{"id":"kalamazoo","na
+                    me":"Kalamazoo","country":"USA","tim
+                     ezone":"Eastern    Time(US&Canada)
+                      ","timezoneOf       fsetInSeconds
+                      ":-18000,"la         t":42.2917,
+                      "lng":-85.58         72,"isNowM
+                      erchantEnabl         ed":false,
+                      "isNowCustom          erEnabled
+                      ":fal  se,"a          reas":[]}
+                      ,{"id  ":"ka           nsas-ci
+                      ty",   "name           ":"Kans
+                     asCi    ty","           country
+                     ":"U    SA",            "timez
+                    one"    :"Cen           tralTi
+                    me     (US&C           anada)
+                            ","           timezon
+                                            eOf
+      
+                                                 fset
+                                                 InSec
+                                                   onds
+                                                    ":-2
+                                                    1600,
+                                                    "lat":
+                                                    39.099
+                                                    7,"lng
+    ":-9  4.5                                       786,"i
+   sNowMerchantEnabled                              ":fals
+   e,"isNowCustomerEnabled":fa         lse,"areas":[]},{"i
+   d":"kelowna","name":"Kelowna","country":"Canada","timez
+   one":"PacificTime(US&Canada)","timezoneOffsetInSeconds":
+   -28800,"lat":49.8799,"lng":-119.45,"isNowMerchantEnabled"
+  :false,"isNowCustomerEnabled":false,"areas":[]},{"id":"king
+  ston","name":"Kingston","country":"Canada","timezone":"Easte
+    rnTi         me(US&Canada)","timezoneOffsetInSeconds":-1800
+                   0,"lat":44.2636,"lng":-76.5034,"isNowMerchantEn
+                  abled":false,"isNowCustomerEnabled":false,"areas":[
+               ]},{"id":"kitchener-waterloo","name":"Kitchener-Waterloo
+              ","country":"Canada","timezone":"EasternTime(US&Canada)","
+             timezon    eOffse                    tInSe   conds":-18000
+            ,"lat      ":43.4                    343,"ln           g":-8
+            0.47     77,"isN              owMerchantEn            abled"
+                    :false,               "isNowCu               stomerE
+                    nabled                                     ":false
+      
+                                                ,"areas"
+                              :[]},{"id":"knoxville","name":
+                           "Knoxville","country":"USA","timezo
+                         ne":"EasternTime(US&Canada)","timezoneO
+                        ffsetInSeconds":-18000,"lat    ":35.9606,
+                       "lng":-83.9207,"isNowMercha        ntEnabled
+                     ":false,"isNowCustomerEnabled           ":false
+                     ,"areas":[]},{"id":"lakeland             ","name
+               ":"Lakeland","country":"USA","tim                ezone
+             ":"EasternTime(US&Canada)","timezon
+          eOffsetInSeconds":-18000,"lat":28.039
+        5,"lng":-81.9498,"isNowMerchantEnabled":
+         false,"isNowCustomerEnabled  ":false,"a
+           reas":[]},{"id":"lansing      ","name
+            ":"Lansing","country":        "USA"
+             ,"timezone":"Eastern        Time(
+              US&Can  ada)","time        zone
+                     OffsetInSeco       nds"
+                       :-18000,"l       at"
+                        :42.7325,     "lng
+                        ":-84.555    5,"i
+                        sNowMerch
+                        antEnabl
+                        ed":fals
+                        e,"isNow
+                        Custome
+                        rEnable
+                        d":fals
+                        e, "are
+      
+                                                 as":
+                                                 []},{
+                                                   "id"
+                                                    :"la
+                                                    s-veg
+                                                    as","n
+                                                    ame":"
+                                                    LasVeg
+    as",  "co                                       untry"
+   :"USA","timezone":"                              Pacifi
+   cTime(US&Canada)","timezone         OffsetInSeconds":-2
+   8800,"lat":36.1146,"lng":-115.173,"isNowMerchantEnabled
+   ":false,"isNowCustomerEnabled":false,"areas":[]},{"id":"
+   lexington","name":"Lexington","country":"USA","timezone":
+  "EasternTime(US&Canada)","timezoneOffsetInSeconds":-18000,"
+  lat":38.0317,"lng":-84.4951,"isNowMerchantEnabled":false,"is
+    NowC         ustomerEnabled":false,"areas":[]},{"id":"linco
+                   ln","name":"Lincoln","country":"USA","timezone"
+                  :"CentralTime(US&Canada)","timezoneOffsetInSeconds"
+               :-21600,"lat":40.8069,"lng":-96.6817,"isNowMerchantEnabl
+              ed":false,"isNowCustomerEnabled":false,"areas":[]},{"id":"
+             little-    rock",                    "name   ":"LittleRock
+            ","co      untry"                    :"USA",           "time
+            zone     ":"Cent              ralTime(US&C            anada)
+                    ","time               zoneOffs               etInSec
+                    onds":                                     -21600,
+      
+                                                               "lat
+                                                              ":34.7
+                                                              465,"l
+                                                              ng":-9
+                                                             2.2896
+                                                            ,"isNo
+                                                           wMerch
+                                                         antEnab
+                                 led":fals              e,"isNo
+                             wCus tomerEnable          d":fals
+                  e,       "areas":[]},{"id":"l       ondon",
+               "name":"L  ondon,ON","country":"C     anada",
+          "timezone":"EasternTime(US&Canada)","tim  ezoneOf
+            fsetInSeconds":-18000,"lat":42.9794,"lng":-81.
+             2461,"isNowMerchantEnabled":false,"isNowCust
+             omerEnabled":false,"areas":[]},{"id":"long-
+             island","name":"LongIsland","country":"USA"
+              ,"timezone":"EasternTime(US&Canada)","time
+                zoneOffsetInSeconds":-18000,"lat":40.816
+                    8,"lng":-73.0661,"isNowMerchantEnabl
+                     ed":false,"isNo    wCustomerEnable
+                      d":false,"are       as":[]},{"id"
+                      :"los-angele         s","name":"
+                      LosAngeles",         "country":
+                      "USA","timez         one":"Paci
+                      ficTime(US&C          anada)","
+                      timez  oneOf          fsetInSec
+                      onds"  :-288           00,"lat
+                      ":34   .0522           ,"lng":
+                     -118    .243,           "isNowM
+                     erch    antE            nabled
+                    ":fa    lse,"           isNowC
+                    us     tomer           Enable
+                            d":           false,"
+                                            are
+      
+                                                               as":
+                                                              [{"id"
+                                                              :"los-
+                                                              angele
+                                                             s","na
+                                                            me":"L
+                                                           osAnge
+                                                         les","l
+                                 at":34.03              05,"lng
+                             ":-1 18.318},{"i          d":"san
+                  -g       abriel-valley","name       ":"SanG
+               abrielVal  ley","lat":34.0745,"ln     g":-118
+          .011},{"id":"san-fernando-valley","name"  :"SanFe
+            rnandoValley","lat":34.2221,"lng":-118.446}]},
+             {"id":"louisville","name":"Louisville","coun
+             try":"USA","timezone":"EasternTime(US&Canad
+             a)","timezoneOffsetInSeconds":-18000,"lat":
+              38.2542,"lng":-85.7594,"isNowMerchantEnabl
+                ed":false,"isNowCustomerEnabled":false,"
+                    areas":[]},{"id":"lubbock","name":"L
+                     ubbock","countr    y":"USA","timez
+                      one":"Central       Time(US&Canad
+                      a)","timezon         eOffsetInSe
+                      conds":-2160         0,"lat":33
+                      .5779,"lng":         -101.855,"
+                      isNowMerchan          tEnabled"
+                      :fals  e,"is          NowCustom
+                      erEna  bled"           :false,
+                      "are   as":[           ]},{"id
+                     ":"m    acon"           ,"name"
+                     :"Ma    con"            ,"coun
+                    try"    :"USA           ","tim
+                    ez     one":           "Easte
+                            rnT           ime(US&
+                                            Can
+      
+                                                 ada)
+                                                 ","ti
+                                                   mezo
+                                                    neOf
+                                                    fsetI
+                                                    nSecon
+                                                    ds":-1
+                                                    8000,"
+    lat"  :32                                       .8407,
+   "lng":-83.6324,"isN                              owMerc
+   hantEnabled":false,"isNowCu         stomerEnabled":fals
+   e,"areas":[]},{"id":"madison","name":"Madison","country
+   ":"USA","timezone":"CentralTime(US&Canada)","timezoneOff
+   setInSeconds":-21600,"lat":43.0731,"lng":-89.4012,"isNowM
+  erchantEnabled":false,"isNowCustomerEnabled":false,"areas":
+  []},{"id":"memphis","name":"Memphis","country":"USA","timezo
+    ne":         "CentralTime(US&Canada)","timezoneOffsetInSeco
+                   nds":-21600,"lat":35.1495,"lng":-90.049,"isNowM
+                  erchantEnabled":false,"isNowCustomerEnabled":false,
+               "areas":[]},{"id":"miami","name":"Miami","country":"USA"
+              ,"timezone":"EasternTime(US&Canada)","timezoneOffsetInSeco
+             nds":-1    8000,"                    lat":   25.7743,"lng"
+            :-80.      1903,"                    isNowMe           rchan
+            tEna     bled":f              alse,"isNowC            ustome
+                    rEnable               d":false               ,"areas
+                    ":[]},                                     {"id":"
+      
+                                                midland-
+                              odessa","name":"Midland/Odessa
+                           ","country":"USA","timezone":"Centr
+                         alTime(US&Canada)","timezoneOffsetInSec
+                        onds":-21600,"lat":31.9727,    "lng":-102
+                       .392,"isNowMerchantEnabled"        :false,"i
+                     sNowCustomerEnabled":false,"a           reas":[
+                     ]},{"id":"milwaukee","name":             "Milwau
+               kee","country":"USA","timezone":"                Centr
+             alTime(US&Canada)","timezoneOffsetI
+          nSeconds":-21600,"lat":43.0389,"lng":
+        -87.9065,"isNowMerchantEnabled":false,"i
+         sNowCustomerEnabled":false,  "areas":[]
+           },{"id":"minneapolis-stp      aul","n
+            ame":"Minneapolis/StPa        ul","
+             country":"USA","time        zone"
+              :"Cent  ralTime(US&        Cana
+                     da)","timezo       neOf
+                       fsetInSeco       nds
+                        ":-21600,     "lat
+                        ":44.98,"    lng"
+                        :-93.2638
+                        ,"isNowM
+                        erchantE
+                        nabled":
+                        false,"
+                        isNowCu
+                        stomerE
+                        na bled
+      
+                                                ":false,
+                              "areas":[]},{"id":"mobile-bald
+                           win-county","name":"Mobile/BaldwinC
+                         ounty","country":"USA","timezone":"Cent
+                        ralTime(US&Canada)","timezo    neOffsetIn
+                       Seconds":-21600,"lat":30.69        44,"lng":
+                     -88.0431,"isNowMerchantEnable           d":fals
+                     e,"isNowCustomerEnabled":fal             se,"are
+               as":[]},{"id":"modesto","name":"M                odest
+             o","country":"USA","timezone":"Paci
+          ficTime(US&Canada)","timezoneOffsetIn
+        Seconds":-28800,"lat":37.6391,"lng":-120
+         .997,"isNowMerchantEnabled"  :false,"is
+           NowCustomerEnabled":fals      e,"area
+            s":[]},{"id":"montgome        ry","
+             name":"Montgomery","        count
+              ry":"U  SA","timezo        ne":
+                     "CentralTime       (US&
+                       Canada)","       tim
+                        ezoneOffs     etIn
+                        Seconds":    -216
+                        00,"lat":
+                        32.3668,
+                        "lng":-8
+                        6.3,"isN
+                        owMerch
+                        antEnab
+                        led":fa
+                        ls e,"i
+      
+                                                sNowCust
+                              omerEnabled":false,"areas":[]}
+                           ,{"id":"napa-sonoma","name":"Napa/S
+                         onoma","country":"USA","timezone":"Paci
+                        ficTime(US&Canada)","timezo    neOffsetIn
+                       Seconds":-28800,"lat":38.44        05,"lng":
+                     -122.714,"isNowMerchantEnable           d":fals
+                     e,"isNowCustomerEnabled":fal             se,"are
+               as":[]},{"id":"naples","name":"Na                ples"
+             ,"country":"USA","timezone":"Easter
+          nTime(US&Canada)","timezoneOffsetInSe
+        conds":-18000,"lat":26.142,"lng":-81.794
+         8,"isNowMerchantEnabled":fa  lse,"isNow
+           CustomerEnabled":false,"      areas":
+            []},{"id":"nashville",        "name
+             ":"Nashville","count        ry":"
+              USA","  timezone":"        Cent
+                     ralTime(US&C       anad
+                       a)","timez       one
+                        OffsetInS     econ
+                        ds":-2160    0,"l
+                        at":36.16
+                        59,"lng"
+                        :-86.784
+                        4,"isNow
+                        Merchan
+                        tEnable
+                        d":fals
+                        e, "isN
+      
+                                                               owCu
+                                                              stomer
+                                                              Enable
+                                                              d":fal
+                                                             se,"ar
+                                                            eas":[
+                                                           ]},{"i
+                                                         d":"new
+                                 -orleans"              ,"name"
+                             :"Ne wOrleans","          country
+                  ":       "USA","timezone":"Ce       ntralTi
+               me(US&Can  ada)","timezoneOffsetI     nSecond
+          s":-21600,"lat":29.9546,"lng":-90.0751,"  isNowMe
+            rchantEnabled":false,"isNowCustomerEnabled":fa
+             lse,"areas":[]},{"id":"new-york","name":"New
+             YorkCity","country":"USA","timezone":"Easte
+             rnTime(US&Canada)","timezoneOffsetInSeconds
+              ":-18000,"lat":40.7561,"lng":-73.987,"isNo
+                wMerchantEnabled":false,"isNowCustomerEn
+                    abled":false,"areas":[]},{"id":"nort
+                     h-jersey","name    ":"NorthJersey"
+                      ,"country":"U       SA","timezone
+                      ":"EasternTi         me(US&Canad
+                      a)","timezon         eOffsetInS
+                      econds":-180         00,"lat":4
+                      0.9598,"lng"          :-74.2219
+                      ,"isN  owMer          chantEnab
+                      led":  false           ,"isNow
+                      Cust   omerE           nabled"
+                     :fal    se,"a           reas":[
+                     ]},{    "id"            :"ocal
+                    a","    name"           :"Ocal
+                    a"     ,"cou           ntry":
+                            "US           A","tim
+                                            ezo
+      
+                                                 ne":
+                                                 "East
+                                                   ernT
+                                                    ime(
+                                                    US&Ca
+                                                    nada)"
+                                                    ,"time
+                                                    zoneOf
+    fset  InS                                       econds
+   ":-18000,"lat":29.1                              872,"l
+   ng":-82.1401,"isNowMerchant         Enabled":false,"isN
+   owCustomerEnabled":false,"areas":[]},{"id":"ogden","nam
+   e":"Ogden","country":"USA","timezone":"MountainTime(US&C
+   anada)","timezoneOffsetInSeconds":-25200,"lat":41.223,"ln
+  g":-111.974,"isNowMerchantEnabled":false,"isNowCustomerEnab
+  led":false,"areas":[]},{"id":"oklahoma-city","name":"Oklahom
+    aCit         y","country":"USA","timezone":"CentralTime(US&
+                   Canada)","timezoneOffsetInSeconds":-21600,"lat"
+                  :35.4676,"lng":-97.5164,"isNowMerchantEnabled":fals
+               e,"isNowCustomerEnabled":false,"areas":[]},{"id":"omaha"
+              ,"name":"Omaha","country":"USA","timezone":"CentralTime(US
+             &Canada    )","ti                    mezon   eOffsetInSeco
+            nds":      -21600                    ,"lat":           41.25
+            4,"l     ng":-95              .9993,"isNow            Mercha
+                    ntEnabl               ed":fals               e,"isNo
+                    wCusto                                     merEnab
+      
+                                                               led"
+                                                              :false
+                                                              ,"area
+                                                              s":[]}
+                                                             ,{"id"
+                                                            :"oran
+                                                           ge-cou
+                                                         nty","n
+                                 ame":"Ora              ngeCoun
+                             ty", "country":"          USA","t
+                  im       ezone":"PacificTime(       US&Cana
+               da)","tim  ezoneOffsetInSeconds":     -28800,
+          "lat":33.7456,"lng":-117.868,"isNowMerch  antEnab
+            led":false,"isNowCustomerEnabled":false,"areas
+             ":[]},{"id":"orlando","name":"Orlando","coun
+             try":"USA","timezone":"EasternTime(US&Canad
+             a)","timezoneOffsetInSeconds":-18000,"lat":
+              28.5383,"lng":-81.3792,"isNowMerchantEnabl
+                ed":false,"isNowCustomerEnabled":false,"
+                    areas":[]},{"id":"ottawa","name":"Ot
+                     tawa","country"    :"Canada","time
+                      zone":"Easter       nTime(US&Cana
+                      da)","timezo         neOffsetInS
+                      econds":-180         00,"lat":4
+                      5.4116,"lng"         :-75.6982,
+                      "isNowMercha          ntEnabled
+                      ":fal  se,"i          sNowCusto
+                      merEn  abled           ":false
+                      ,"ar   eas":           []},{"i
+                     d":"    palm-           beach",
+                     "nam    e":"            PalmBe
+                    ach"    ,"cou           ntry":
+                    "U     SA","           timezo
+                            ne"           :"Easte
+                                            rnT
+      
+                                                 ime(
+                                                 US&Ca
+                                                   nada
+                                                    )","
+                                                    timez
+                                                    oneOff
+                                                    setInS
+                                                    econds
+    ":-1  800                                       0,"lat
+   ":26.7056,"lng":-80                              .0364,
+   "isNowMerchantEnabled":fals         e,"isNowCustomerEna
+   bled":false,"areas":[]},{"id":"pensacola","name":"Pensa
+   cola","country":"USA","timezone":"CentralTime(US&Canada)
+   ","timezoneOffsetInSeconds":-21600,"lat":30.4213,"lng":-8
+  7.2169,"isNowMerchantEnabled":false,"isNowCustomerEnabled":
+  false,"areas":[]},{"id":"philadelphia","name":"Philadelphia"
+    ,"co         untry":"USA","timezone":"EasternTime(US&Canada
+                   )","timezoneOffsetInSeconds":-18000,"lat":39.95
+                  16,"lng":-75.1638,"isNowMerchantEnabled":false,"isN
+               owCustomerEnabled":false,"areas":[]},{"id":"phoenix","na
+              me":"Phoenix","country":"USA","timezone":"Arizona","timezo
+             neOffse    tInSec                    onds"   :-25200,"lat"
+            :33.4      483,"l                    ng":-11           2.074
+            ,"is     NowMerc              hantEnabled"            :false
+                    ,"isNow               Customer               Enabled
+                    ":fals                                     e,"area
+      
+                                                 s":[
+                                                 ]},{"
+                                                   id":
+                                                    "pie
+                                                    dmont
+                                                    -triad
+                                                    ","nam
+                                                    e":"Pi
+    edmo  ntT                                       riad",
+   "country":"USA","ti                              mezone
+   ":"EasternTime(US&Canada)",         "timezoneOffsetInSe
+   conds":-18000,"lat":36.0726,"lng":-79.792,"isNowMerchan
+   tEnabled":false,"isNowCustomerEnabled":false,"areas":[]}
+   ,{"id":"pittsburgh","name":"Pittsburgh","country":"USA","
+  timezone":"EasternTime(US&Canada)","timezoneOffsetInSeconds
+  ":-18000,"lat":40.4406,"lng":-79.9959,"isNowMerchantEnabled"
+    :fal         se,"isNowCustomerEnabled":false,"areas":[]},{"
+                   id":"portland","name":"Portland","country":"USA
+                  ","timezone":"PacificTime(US&Canada)","timezoneOffs
+               etInSeconds":-28800,"lat":45.5235,"lng":-122.676,"isNowM
+              erchantEnabled":false,"isNowCustomerEnabled":false,"areas"
+             :[]},{"    id":"p                    ortla   nd-me","name"
+            :"Por      tland,                    ME","co           untry
+            ":"U     SA","ti              mezone":"Eas            ternTi
+                    me(US&C               anada)",               "timezo
+                    neOffs                                     etInSec
+      
+                                                onds":-1
+                              8000,"lat":43.6615,"lng":-70.2
+                           553,"isNowMerchantEnabled":false,"i
+                         sNowCustomerEnabled":false,"areas":[]},
+                        {"id":"providence","name":"    Providence
+                       ","country":"USA","timezone        ":"Easter
+                     nTime(US&Canada)","timezoneOf           fsetInS
+                     econds":-18000,"lat":41.824,             "lng":-
+               71.4128,"isNowMerchantEnabled":fa                lse,"
+             isNowCustomerEnabled":false,"areas"
+          :[]},{"id":"raleigh-durham","name":"R
+        aleigh/Durham","country":"USA","timezone
+         ":"EasternTime(US&Canada)",  "timezoneO
+           ffsetInSeconds":-18000,"      lat":35
+            .7721,"lng":-78.6386,"        isNow
+             MerchantEnabled":fal        se,"i
+              sNowCu  stomerEnabl        ed":
+                     false,"areas       ":[]
+                       },{"id":"r       egi
+                        na","name     ":"R
+                        egina","c    ount
+                        ry":"Cana
+                        da","tim
+                        ezone":"
+                        CentralT
+                        ime(US&
+                        Canada)
+                        ","time
+                        zo neOf
+      
+                                                 fset
+                                                 InSec
+                                                   onds
+                                                    ":-2
+                                                    1600,
+                                                    "lat":
+                                                    50.45,
+                                                    "lng":
+    -104  .61                                       ,"isNo
+   wMerchantEnabled":f                              alse,"
+   isNowCustomerEnabled":false         ,"areas":[]},{"id":
+   "reno","name":"Reno","country":"USA","timezone":"Pacifi
+   cTime(US&Canada)","timezoneOffsetInSeconds":-28800,"lat"
+   :39.5296,"lng":-119.814,"isNowMerchantEnabled":false,"isN
+  owCustomerEnabled":false,"areas":[]},{"id":"richmond","name
+  ":"Richmond","country":"USA","timezone":"EasternTime(US&Cana
+    da)"         ,"timezoneOffsetInSeconds":-18000,"lat":37.533
+                   ,"lng":-77.467,"isNowMerchantEnabled":false,"is
+                  NowCustomerEnabled":false,"areas":[]},{"id":"rio-gr
+               ande-valley","name":"RioGrandeValley","country":"USA","t
+              imezone":"CentralTime(US&Canada)","timezoneOffsetInSeconds
+             ":-2160    0,"lat                    ":26.   2034,"lng":-9
+            8.23,      "isNow                    Merchan           tEnab
+            led"     :false,              "isNowCustom            erEnab
+                    led":fa               lse,"are               as":[]}
+                    ,{"id"                                     :"roano
+      
+                                                               ke",
+                                                              "name"
+                                                              :"Roan
+                                                              oke","
+                                                             countr
+                                                            y":"US
+                                                           A","ti
+                                                         mezone"
+                                 :"Eastern              Time(US
+                             &Can ada)","time          zoneOff
+                  se       tInSeconds":-18000,"       lat":37
+               .271,"lng  ":-79.9414,"isNowMerch     antEnab
+          led":false,"isNowCustomerEnabled":false,  "areas"
+            :[]},{"id":"rochester","name":"Rochester","cou
+             ntry":"USA","timezone":"EasternTime(US&Canad
+             a)","timezoneOffsetInSeconds":-18000,"lat":
+             43.1548,"lng":-77.6156,"isNowMerchantEnable
+              d":false,"isNowCustomerEnabled":false,"are
+                as":[]},{"id":"rockford","name":"Rockfor
+                    d","country":"USA","timezone":"Centr
+                     alTime(US&Canad    a)","timezoneOf
+                      fsetInSeconds       ":-21600,"lat
+                      ":42.2711,"l         ng":-89.094
+                      ,"isNowMerch         antEnabled
+                      ":false,"isN         owCustomer
+                      Enabled":fal          se,"areas
+                      ":[]}  ,{"id          ":"sacram
+                      ento"  ,"nam           e":"Sac
+                      rame   nto",           "countr
+                     y":"    USA",           "timezo
+                     ne":    "Pac            ificTi
+                    me(U    S&Can           ada)",
+                    "t     imezo           neOffs
+                            etI           nSecond
+                                            s":
+      
+                                                -28800,"
+                              lat":38.5816,"lng":-121.494,"i
+                           sNowMerchantEnabled":false,"isNowCu
+                         stomerEnabled":false,"areas":[]},{"id":
+                        "salem-or","name":"SalemOR"    ,"country"
+                       :"USA","timezone":"PacificT        ime(US&Ca
+                     nada)","timezoneOffsetInSecon           ds":-28
+                     800,"lat":44.9429,"lng":-123             .035,"i
+               sNowMerchantEnabled":false,"isNow                Custo
+             merEnabled":false,"areas":[]},{"id"
+          :"salt-lake-city","name":"SaltLakeCit
+        y","country":"USA","timezone":"MountainT
+         ime(US&Canada)","timezoneOf  fsetInSeco
+           nds":-25200,"lat":40.760      8,"lng"
+            :-111.891,"isNowMercha        ntEna
+             bled":false,"isNowCu        stome
+              rEnabl  ed":false,"        area
+                     s":[]},{"id"       :"sa
+                       n-angelo",       "na
+                        me":"SanA     ngel
+                        o","count    ry":
+                        "USA","ti
+                        mezone":
+                        "Central
+                        Time(US&
+                        Canada)
+                        ","time
+                        zoneOff
+                        se tInS
+      
+                                                econds":
+                              -21600,"lat":31.4406,"lng":-10
+                           0.452,"isNowMerchantEnabled":false,
+                         "isNowCustomerEnabled":false,"areas":[]
+                        },{"id":"san-antonio","name    ":"SanAnto
+                       nio","country":"USA","timez        one":"Cen
+                     tralTime(US&Canada)","timezon           eOffset
+                     InSeconds":-21600,"lat":29.4             241,"ln
+               g":-98.4936,"isNowMerchantEnabled                ":fal
+             se,"isNowCustomerEnabled":false,"ar
+          eas":[]},{"id":"san-diego","name":"Sa
+        nDiego","country":"USA","timezone":"Paci
+         ficTime(US&Canada)","timezo  neOffsetIn
+           Seconds":-28800,"lat":32      .7188,"
+            lng":-117.164,"isNowMe        rchan
+             tEnabled":false,"isN        owCus
+              tomerE  nabled":fal        se,"
+                     areas":[]},{       "id"
+                       :"san-fran       cis
+                        co","name     ":"S
+                        anFrancis    co",
+                        "country"
+                        :"USA","
+                        timezone
+                        ":"Pacif
+                        icTime(
+                        US&Cana
+                        da)","t
+                        im ezon
+      
+                                                               eOff
+                                                              setInS
+                                                              econds
+                                                              ":-288
+                                                             00,"la
+                                                            t":37.
+                                                           7752,"
+                                                         lng":-1
+                                 22.419,"i              sNowMer
+                             chan tEnabled":f          alse,"i
+                  sN       owCustomerEnabled":f       alse,"a
+               reas":[{"  id":"san-francisco","n     ame":"S
+          anFrancisco","lat":37.7808,"lng":-122.41  8},{"id
+            ":"east-bay","name":"EastBay","lat":37.8151,"l
+             ng":-122.24}]},{"id":"san-jose","name":"SanJ
+             ose","country":"USA","timezone":"PacificTim
+             e(US&Canada)","timezoneOffsetInSeconds":-28
+              800,"lat":37.3394,"lng":-121.895,"isNowMer
+                chantEnabled":false,"isNowCustomerEnable
+                    d":false,"areas":[]},{"id":"santa-ba
+                     rbara","name":"    SantaBarbara","
+                      country":"USA       ","timezone":
+                      "PacificTime         (US&Canada)
+                      ","timezoneO         ffsetInSec
+                      onds":-28800         ,"lat":34.
+                      3996,"lng":-          119.713,"
+                      isNow  Merch          antEnable
+                      d":fa  lse,"           isNowCu
+                      stom   erEna           bled":f
+                     alse    ,"are           as":[]}
+                     ,{"i    d":"            santa-
+                    clar    ita",           "name"
+                    :"     Santa           Clarit
+                            a",           "countr
+                                            y":
+      
+                                                               "USA
+                                                              ","tim
+                                                              ezone"
+                                                              :"Paci
+                                                             ficTim
+                                                            e(US&C
+                                                           anada)
+                                                         ","time
+                                 zoneOffse              tInSeco
+                             nds" :-28800,"la          t":34.3
+                  91       7,"lng":-118.543,"is       NowMerc
+               hantEnabl  ed":false,"isNowCustom     erEnabl
+          ed":false,"areas":[]},{"id":"santa-cruz"  ,"name"
+            :"SantaCruz","country":"USA","timezone":"Pacif
+             icTime(US&Canada)","timezoneOffsetInSeconds"
+             :-28800,"lat":36.9741,"lng":-122.031,"isNow
+             MerchantEnabled":false,"isNowCustomerEnable
+              d":false,"areas":[]},{"id":"saskatoon","na
+                me":"Saskatoon","country":"Canada","time
+                    zone":"CentralTime(US&Canada)","time
+                     zoneOffsetInSec    onds":-21600,"l
+                      at":52.1344,"       lng":-106.648
+                      ,"isNowMerch         antEnabled"
+                      :false,"isNo         wCustomerE
+                      nabled":fals         e,"areas":
+                      []},{"id":"s          avannah-h
+                      ilton  -head          ","name":
+                      "Sava  nnah/           HiltonH
+                      ead"   ,"cou           ntry":"
+                     USA"    ,"tim           ezone":
+                     "Eas    tern            Time(U
+                    S&Ca    nada)           ","tim
+                    ez     oneOf           fsetIn
+                            Sec           onds":-
+                                            180
+      
+                                                00,"lat"
+                              :32.0835,"lng":-81.0998,"isNow
+                           MerchantEnabled":false,"isNowCustom
+                         erEnabled":false,"areas":[]},{"id":"sea
+                        ttle","name":"Seattle","cou    ntry":"USA
+                       ","timezone":"PacificTime(U        S&Canada)
+                     ","timezoneOffsetInSeconds":-           28800,"
+                     lat":47.621,"lng":-122.347,"             isNowMe
+               rchantEnabled":false,"isNowCustom                erEna
+             bled":false,"areas":[{"id":"tacoma"
+          ,"name":"Tacoma","lat":47.249,"lng":-
+        122.465},{"id":"seattle","name":"Seattle
+         ","lat":47.6113,"lng":-122.  333}]},{"i
+           d":"shreveport-bossier",      "name":
+            "Shreveport/Bossier","        count
+             ry":"USA","timezone"        :"Cen
+              tralTi  me(US&Canad        a)",
+                     "timezoneOff       setI
+                       nSeconds":       -21
+                        600,"lat"     :32.
+                        5252,"lng    ":-9
+                        3.7502,"i
+                        sNowMerc
+                        hantEnab
+                        led":fal
+                        se,"isN
+                        owCusto
+                        merEnab
+                        le d":f
+      
+                                                               alse
+                                                              ,"area
+                                                              s":[]}
+                                                              ,{"id"
+                                                             :"siou
+                                                            x-fall
+                                                           s","na
+                                                         me":"Si
+                                 ouxFalls"              ,"count
+                             ry": "USA","time          zone":"
+                  Ce       ntralTime(US&Canada)       ","time
+               zoneOffse  tInSeconds":-21600,"la     t":43.5
+          5,"lng":-96.7003,"isNowMerchantEnabled":  false,"
+            isNowCustomerEnabled":false,"areas":[]},{"id":
+             "south-bend","name":"SouthBend","country":"U
+             SA","timezone":"EasternTime(US&Canada)","ti
+             mezoneOffsetInSeconds":-18000,"lat":41.6834
+              ,"lng":-86.25,"isNowMerchantEnabled":false
+                ,"isNowCustomerEnabled":false,"areas":[]
+                    },{"id":"albany-ga","name":"Southern
+                     Georgia","count    ry":"USA","time
+                      zone":"Easter       nTime(US&Cana
+                      da)","timezo         neOffsetInS
+                      econds":-180         00,"lat":3
+                      1.5785,"lng"         :-84.1557,
+                      "isNowMercha          ntEnabled
+                      ":fal  se,"i          sNowCusto
+                      merEn  abled           ":false
+                      ,"ar   eas":           []},{"i
+                     d":"    spoka           ne-coeu
+                     r-da    lene            ","nam
+                    e":"    Spoka           ne/Coe
+                    ur     d'Ale           ne","c
+                            oun           try":"U
+                                            SA"
+      
+                                                ,"timezo
+                              ne":"PacificTime(US&Canada)","
+                           timezoneOffsetInSeconds":-28800,"la
+                         t":47.6588,"lng":-117.426,"isNowMerchan
+                        tEnabled":false,"isNowCusto    merEnabled
+                       ":false,"areas":[]},{"id":"        springfie
+                     ld-mo","name":"SpringfieldMO"           ,"count
+                     ry":"USA","timezone":"Centra             lTime(U
+               S&Canada)","timezoneOffsetInSecon                ds":-
+             21600,"lat":37.2153,"lng":-93.2982,
+          "isNowMerchantEnabled":false,"isNowCu
+        stomerEnabled":false,"areas":[]},{"id":"
+         springfield-ma","name":"Spr  ingfield,M
+           A","country":"USA","time      zone":"
+            EasternTime(US&Canada)        ","ti
+             mezoneOffsetInSecond        s":-1
+              8000,"  lat":42.101        5,"l
+                     ng":-72.5898       ,"is
+                       NowMerchan       tEn
+                        abled":fa     lse,
+                        "isNowCus    tome
+                        rEnabled"
+                        :false,"
+                        areas":[
+                        ]},{"id"
+                        :"stcat
+                        harines
+                        -niagar
+                        a" ,"na
+      
+                                                me":"StC
+                              atharines-Niagara","country":"
+                           Canada","timezone":"EasternTime(US&
+                         Canada)","timezoneOffsetInSeconds":-180
+                        00,"lat":43.588,"lng":-77.7    452,"isNow
+                       MerchantEnabled":false,"isN        owCustome
+                     rEnabled":false,"areas":[]},{           "id":"s
+                     t-johns","name":"StJohn's","             country
+               ":"Canada","timezone":"Newfoundla                nd","
+             timezoneOffsetInSeconds":-12600,"la
+          t":47.5615,"lng":-52.7127,"isNowMerch
+        antEnabled":false,"isNowCustomerEnabled"
+         :false,"areas":[]},{"id":"s  tlouis","n
+           ame":"StLouis","country"      :"USA",
+            "timezone":"CentralTim        e(US&
+             Canada)","timezoneOf        fsetI
+              nSecon  ds":-21600,        "lat
+                     ":38.6275,"l       ng":
+                       -90.1984,"       isN
+                        owMerchan     tEna
+                        bled":fal    se,"
+                        isNowCust
+                        omerEnab
+                        led":fal
+                        se,"area
+                        s":[]},
+                        {"id":"
+                        stockto
+                        n" ,"na
+      
+                                                               me":
+                                                              "Stock
+                                                              ton","
+                                                              countr
+                                                             y":"US
+                                                            A","ti
+                                                           mezone
+                                                         ":"Paci
+                                 ficTime(U              S&Canad
+                             a)", "timezoneOf          fsetInS
+                  ec       onds":-28800,"lat":3       7.9577,
+               "lng":-12  1.291,"isNowMerchantEn     abled":
+          false,"isNowCustomerEnabled":false,"area  s":[]},
+            {"id":"sudbury","name":"Sudbury","country":"Ca
+             nada","timezone":"EasternTime(US&Canada)","t
+             imezoneOffsetInSeconds":-18000,"lat":46.49,
+             "lng":-81.01,"isNowMerchantEnabled":false,"
+              isNowCustomerEnabled":false,"areas":[]},{"
+                id":"syracuse","name":"Syracuse","countr
+                    y":"USA","timezone":"EasternTime(US&
+                     Canada)","timez    oneOffsetInSeco
+                      nds":-18000,"       lat":43.0481,
+                      "lng":-76.14         74,"isNowMe
+                      rchantEnable         d":false,"
+                      isNowCustome         rEnabled":
+                      true,"areas"          :[]},{"id
+                      ":"ta  llaha          ssee","na
+                      me":"  Talla           hassee"
+                      ,"co   untry           ":"USA"
+                     ,"ti    mezon           e":"Eas
+                     tern    Time            (US&Ca
+                    nada    )","t           imezon
+                    eO     ffset           InSeco
+                            nds           ":-1800
+                                            0,"
+      
+                                                               lat"
+                                                              :30.43
+                                                              83,"ln
+                                                              g":-84
+                                                             .2807,
+                                                            "isNow
+                                                           Mercha
+                                                         ntEnabl
+                                 ed":false              ,"isNow
+                             Cust omerEnabled          ":false
+                  ,"       areas":[]},{"id":"ta       mpa-bay
+               -area","n  ame":"TampaBayArea","c     ountry"
+          :"USA","timezone":"EasternTime(US&Canada  )","tim
+            ezoneOffsetInSeconds":-18000,"lat":27.9814,"ln
+             g":-82.4511,"isNowMerchantEnabled":false,"is
+             NowCustomerEnabled":false,"areas":[]},{"id"
+             :"toledo","name":"Toledo","country":"USA","
+              timezone":"EasternTime(US&Canada)","timezo
+                neOffsetInSeconds":-18000,"lat":41.6639,
+                    "lng":-83.5552,"isNowMerchantEnabled
+                     ":false,"isNowC    ustomerEnabled"
+                      :false,"areas       ":[]},{"id":"
+                      topeka-lawre         nce","name"
+                      :"Topeka/Law         rence","co
+                      untry":"USA"         ,"timezone
+                      ":"CentralTi          me(US&Can
+                      ada)"  ,"tim          ezoneOffs
+                      etInS  econd           s":-216
+                      00,"   lat":           39.0558
+                     ,"ln    g":-9           5.689,"
+                     isNo    wMer            chantE
+                    nabl    ed":f           alse,"
+                    is     NowCu           stomer
+                            Ena           bled":f
+                                            als
+      
+                                                               e,"a
+                                                              reas":
+                                                              []},{"
+                                                              id":"g
+                                                             reater
+                                                            -toron
+                                                           to-are
+                                                         a","nam
+                                 e":"Toron              to(GTA)
+                             ","c ountry":"Ca          nada","
+                  ti       mezone":"EasternTime       (US&Can
+               ada)","ti  mezoneOffsetInSeconds"     :-18000
+          ,"lat":43.6702,"lng":-79.3868,"isNowMerc  hantEna
+            bled":false,"isNowCustomerEnabled":false,"area
+             s":[]},{"id":"tucson","name":"Tucson","count
+             ry":"USA","timezone":"PacificTime(US&Canada
+             )","timezoneOffsetInSeconds":-28800,"lat":3
+              2.2217,"lng":-110.926,"isNowMerchantEnable
+                d":false,"isNowCustomerEnabled":false,"a
+                    reas":[]},{"id":"tulsa","name":"Tuls
+                     a","country":"U    SA","timezone":
+                      "CentralTime(       US&Canada)","
+                      timezoneOffs         etInSeconds
+                      ":-21600,"la         t":36.154,
+                      "lng":-95.99         28,"isNowM
+                      erchantEnabl          ed":false
+                      ,"isN  owCus          tomerEnab
+                      led":  false           ,"areas
+                      ":[]   },{"i           d":"van
+                     couv    er","           name":"
+                     Vanc    ouve            r","co
+                    untr    y":"C           anada"
+                    ,"     timez           one":"
+                            Pac           ificTim
+                                            e(U
+      
+                                                               S&Ca
+                                                              nada)"
+                                                              ,"time
+                                                              zoneOf
+                                                             fsetIn
+                                                            Second
+                                                           s":-28
+                                                         800,"la
+                                 t":49.263              6,"lng"
+                             :-12 3.139,"isNo          wMercha
+                  nt       Enabled":false,"isNo       wCustom
+               erEnabled  ":false,"areas":[]},{"     id":"ve
+          ntura-county","name":"VenturaCounty","co  untry":
+            "USA","timezone":"PacificTime(US&Canada)","tim
+             ezoneOffsetInSeconds":-28800,"lat":34.3705,"
+             lng":-119.139,"isNowMerchantEnabled":false,
+             "isNowCustomerEnabled":false,"areas":[]},{"
+              id":"victoria","name":"Victoria","country"
+                :"Canada","timezone":"PacificTime(US&Can
+                    ada)","timezoneOffsetInSeconds":-288
+                     00,"lat":48.428    6,"lng":-123.36
+                      6,"isNowMerch       antEnabled":f
+                      alse,"isNowC         ustomerEnab
+                      led":false,"         areas":[]}
+                      ,{"id":"wash         ington-dc"
+                      ,"name":"Was          hingtonDC
+                      ","co  untry          ":"USA","
+                      timez  one":           "Easter
+                      nTim   e(US&           Canada)
+                     ","t    imezo           neOffse
+                     tInS    econ            ds":-1
+                    8000    ,"lat           ":38.8
+                    92     1,"ln           g":-77
+                            .02           41,"isN
+                                            owM
+      
+                                                 erch
+                                                 antEn
+                                                   able
+                                                    d":f
+                                                    alse,
+                                                    "isNow
+                                                    Custom
+                                                    erEnab
+    led"  :fa                                       lse,"a
+   reas":[{"id":"dc-me                              tro","
+   name":"TheDistrict","lat":3         8.9066,"lng":-77.01
+   66},{"id":"northern-virginia","name":"NorthernVirginia"
+   ,"lat":38.8209,"lng":-77.291},{"id":"montgomery-county",
+   "name":"MontgomeryCounty","lat":39.0772,"lng":-77.1262}]}
+  ,{"id":"westchester-county","name":"WestchesterCounty","cou
+  ntry":"USA","timezone":"EasternTime(US&Canada)","timezoneOff
+    setI         nSeconds":-18000,"lat":41.122,"lng":-73.7949,"
+                   isNowMerchantEnabled":false,"isNowCustomerEnabl
+                  ed":false,"areas":[]},{"id":"wichita","name":"Wichi
+               ta","country":"USA","timezone":"CentralTime(US&Canada)",
+              "timezoneOffsetInSeconds":-21600,"lat":37.6922,"lng":-97.3
+             375,"is    NowMer                    chant   Enabled":fals
+            e,"is      NowCus                    tomerEn           abled
+            ":fa     lse,"ar              eas":[]},{"i            d":"wi
+                    lmingto               n-newark               ","name
+                    ":"Wil                                     mington
+      
+                                                -Newark"
+                              ,"country":"USA","timezone":"E
+                           asternTime(US&Canada)","timezoneOff
+                         setInSeconds":-18000,"lat":39.7092,"lng
+                        ":-75.6816,"isNowMerchantEn    abled":fal
+                       se,"isNowCustomerEnabled":f        alse,"are
+                     as":[]},{"id":"windsor","name           ":"Wind
+                     sor","country":"Canada","tim             ezone":
+               "EasternTime(US&Canada)","timezon                eOffs
+             etInSeconds":-18000,"lat":42.2927,"
+          lng":-82.9933,"isNowMerchantEnabled":
+        false,"isNowCustomerEnabled":false,"area
+         s":[]},{"id":"winnipeg","na  me":"Winni
+           peg","country":"Canada",      "timezo
+            ne":"CentralTime(US&Ca        nada)
+             ","timezoneOffsetInS        econd
+              s":-21  600,"lat":4        9.88
+                     61,"lng":-97       .152
+                       9,"isNowMe       rch
+                        antEnable     d":f
+                        alse,"isN    owCu
+                        stomerEna
+                        bled":fa
+                        lse,"are
+                        as":[]},
+                        {"id":"
+                        worcest
+                        er","na
+                        me ":"W
+      
+                                                 orce
+                                                 ster"
+                                                   ,"co
+                                                    untr
+                                                    y":"U
+                                                    SA","t
+                                                    imezon
+                                                    e":"Ea
+    ster  nTi                                       me(US&
+   Canada)","timezoneO                              ffsetI
+   nSeconds":-18000,"lat":42.2         626,"lng":-71.8023,
+   "isNowMerchantEnabled":false,"isNowCustomerEnabled":fal
+   se,"areas":[]},{"id":"york-pa","name":"York,PA","country
+   ":"USA","timezone":"EasternTime(US&Canada)","timezoneOffs
+  etInSeconds":-18000,"lat":39.9626,"lng":-76.7277,"isNowMerc
+  hantEnabled":false,"isNowCustomerEnabled":false,"areas":[]},
+    {"id         ":"youngstown","name":"Youngstown","country":"
+                   USA","timezone":"EasternTime(US&Canada)","timez
+                  oneOffsetInSeconds":-18000,"lat":41.0998,"lng":-80.
+               6495,"isNowMerchantEnabled":false,"isNowCustomerEnabled"
+              :false,"areas":[]}]}
+</pre>
 
 h2. Credits
 
