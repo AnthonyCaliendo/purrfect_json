@@ -36,7 +36,7 @@ If the gem is loaded with Rails present, it will automatically register the MIME
 h2. Example Output
 
 Formatted output from:
-http://api.uat.groupon.com/v2/divisions.cats
+http://api.groupon.com/v2/divisions.cats
 
 <pre>
 
